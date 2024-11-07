@@ -9,9 +9,29 @@ class maths{
         }
         return false;
     }
+    public static boolean is_cube(int a){
+        if (a == 1){
+            return true;
+        } else if (a == 0){
+            return true;
+        }else{
+            for(int x = 2; x < a; x++){
+                if(is_perfect(x)){
+                    int test = (int)Math.sqrt(x);
+                    if(test * x == a){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
 }
 public class Devine {
     public static void main (String[] args){
-        System.out.println("Welcome we will make mathematical codes ready for testing of git");
+        for(int x = 0; x <= 100; x++){
+            System.out.println(x+" result of Cube: "+maths.is_cube(x));
+            System.out.println(x+" result of Square: "+maths.is_perfect(x));
+        }
     }
 }
