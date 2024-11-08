@@ -26,12 +26,19 @@ class maths{
         }
         return false;
     }
+    public static int facto(int a){
+        if (a == 0){
+            return 1;
+        }
+        return a * facto(a-1);
+    }
 }
 public class Devine {
     public static void main (String[] args){
-        for(int x = 0; x <= 100; x++){
+        for(int x = 0; x <= 10; x++){
             System.out.println(x+" result of Cube: "+maths.is_cube(x));
             System.out.println(x+" result of Square: "+maths.is_perfect(x));
+            System.out.println("Factorial of "+x+": "+maths.facto(x));
         }
     }
 }
